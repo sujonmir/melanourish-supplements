@@ -38,8 +38,8 @@
   var FREE_SHIPPING = 50;
   var SUB_DISCOUNT = 0.15;
   var CATALOG = {
-    'daily-glow': { title: "Daily Glow Women's Multivitamin", price: 32, bottle: '#5B2A3C', bg: '#F3DCE3' },
-    'd3-k2': { title: 'Sunshine Vitamin D3 + K2', price: 24, bottle: '#E59A2F', bg: '#FCE7C4' }
+    'daily-glow': { title: "Daily Glow Women's Multivitamin", price: 32, img: 'assets/images/product-daily-glow.jpg' },
+    'd3-k2': { title: 'Sunshine Vitamin D3 + K2', price: 24, img: 'assets/images/product-d3-k2.jpg' }
   };
 
   var drawer = document.querySelector('[data-cart-drawer]');
@@ -65,7 +65,7 @@
       : 'One-time purchase';
     var compare = line.sub ? '<s>' + money(p.price * line.qty) + '</s>' : '';
     return '<li class="cart-item">' +
-      '<span class="bottle-art" style="--art-bg:' + p.bg + '" aria-hidden="true"><span class="bottle" style="--bottle:' + p.bottle + '"></span></span>' +
+      '<img src="' + p.img + '" alt="" width="900" height="900">' +
       '<div><p class="cart-item__title">' + p.title + '</p><p class="cart-item__meta">' + meta + '</p>' +
         '<div class="mini-qty"><button type="button" aria-label="Decrease quantity" data-line-minus="' + i + '">−</button>' +
         '<span>' + line.qty + '</span>' +
@@ -149,14 +149,14 @@
      search overlay (full screen, predictive)
      ------------------------------------------------------------ */
   var PRODUCTS = [
-    { t: "Daily Glow Women's Multivitamin", type: 'Multivitamin', k: 'multi energy vitamin d iron b12 daily', p: 32, b: '#5B2A3C', bg: '#F3DCE3' },
-    { t: 'Sunshine Vitamin D3 + K2', type: 'Vitamin D', k: 'vitamin d d3 k2 bones immunity mood sun', p: 24, b: '#E59A2F', bg: '#FCE7C4' },
-    { t: 'Iron Strong + Vitamin C', type: 'Iron', k: 'iron energy fatigue tired vitamin c anemia', p: 22, b: '#6F8A6A', bg: '#DDE7DA' },
-    { t: 'Crown Hair, Skin & Nails', type: 'Beauty', k: 'hair skin nails biotin beauty growth collagen', p: 28, b: '#B65A6E', bg: '#F3DCE3' },
-    { t: 'Calm Magnesium Glycinate', type: 'Sleep & stress', k: 'magnesium sleep stress calm cramps relax', p: 26, b: '#3E5B6E', bg: '#DDE7DA' },
-    { t: 'Balance Ashwagandha', type: 'Stress', k: 'ashwagandha stress hormones balance mood adaptogen', p: 25, b: '#8A5A2B', bg: '#FCE7C4' },
-    { t: 'Gut Ease Probiotic', type: 'Gut health', k: 'probiotic gut bloating digestion', p: 34, b: '#5B2A3C', bg: '#F3DCE3' },
-    { t: 'Omega-3 Fish Oil', type: 'Omega-3', k: 'omega fish oil heart brain skin', p: 30, b: '#C9852A', bg: '#DDE7DA' }
+    { t: "Daily Glow Women's Multivitamin", type: 'Multivitamin', k: 'multi energy vitamin d iron b12 daily', p: 32, img: 'assets/images/product-daily-glow.jpg' },
+    { t: 'Sunshine Vitamin D3 + K2', type: 'Vitamin D', k: 'vitamin d d3 k2 bones immunity mood sun', p: 24, img: 'assets/images/product-d3-k2.jpg' },
+    { t: 'Iron Strong + Vitamin C', type: 'Iron', k: 'iron energy fatigue tired vitamin c anemia', p: 22, img: 'assets/images/product-iron.jpg' },
+    { t: 'Crown Hair, Skin & Nails', type: 'Beauty', k: 'hair skin nails biotin beauty growth collagen', p: 28, img: 'assets/images/product-crown.jpg' },
+    { t: 'Calm Magnesium Glycinate', type: 'Sleep & stress', k: 'magnesium sleep stress calm cramps relax', p: 26, img: 'assets/images/product-magnesium.jpg' },
+    { t: 'Balance Ashwagandha', type: 'Stress', k: 'ashwagandha stress hormones balance mood adaptogen', p: 25, img: 'assets/images/product-ashwagandha.jpg' },
+    { t: 'Gut Ease Probiotic', type: 'Gut health', k: 'probiotic gut bloating digestion', p: 34, img: 'assets/images/product-probiotic.jpg' },
+    { t: 'Omega-3 Fish Oil', type: 'Omega-3', k: 'omega fish oil heart brain skin', p: 30, img: 'assets/images/product-omega3.jpg' }
   ];
   var search = document.querySelector('[data-search]');
   var sOpen = document.querySelector('[data-search-open]');
@@ -172,7 +172,7 @@
   }
   function resultHTML(pr, q) {
     return '<li><a class="search-result" href="product.html">' +
-      '<span class="bottle-art" style="--art-bg:' + pr.bg + '" aria-hidden="true"><span class="bottle" style="--bottle:' + pr.b + '"></span></span>' +
+      '<img src="' + pr.img + '" alt="" width="900" height="900" loading="lazy">' +
       '<span><span class="search-result__type">' + pr.type + '</span>' +
       '<span class="search-result__title">' + highlight(pr.t, q) + '</span>' +
       '<span class="search-result__price">' + money(pr.p) + ' <small>· ' + money(pr.p * (1 - SUB_DISCOUNT)) + ' subscribed</small></span></span>' +
@@ -276,11 +276,24 @@
   }
   form.addEventListener('submit', function (e) { e.preventDefault(); addToCart(); });
 
-  // gallery thumbnails
+  // gallery thumbnails → swap main image (facts thumb opens the facts tab)
+  var mainImg = document.querySelector('[data-main-media]');
   document.querySelectorAll('[data-thumb]').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      if (btn.hasAttribute('data-facts')) {
+        var tab = document.querySelector('[data-facts-tab]');
+        if (tab) { tab.open = true; tab.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        return;
+      }
       document.querySelectorAll('[data-thumb]').forEach(function (b) { b.setAttribute('aria-current', 'false'); });
       btn.setAttribute('aria-current', 'true');
+      if (!mainImg) return;
+      mainImg.classList.add('is-swapping');
+      setTimeout(function () {
+        mainImg.src = btn.getAttribute('data-src');
+        mainImg.alt = btn.getAttribute('data-alt');
+        mainImg.classList.remove('is-swapping');
+      }, 180);
     });
   });
 
