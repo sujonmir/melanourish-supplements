@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MelaNourish — Vitamins made for Black women (Homepage mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SVG icon sprite → snippets/icon-*.liquid
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7L19 16Z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M12 9.5C12 6 13.5 4 12 3s-0 2.5 0 6.5ZM12 14.5c0 3.5-1.5 5.5 0 6.5s0-2.5 0-6.5ZM9.5 12C6 12 4 10.5 3 12s2.5 0 6.5 0ZM14.5 12c3.5 0 5.5 1.5 6.5 0s-2.5 0-6.5 0Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4" stroke-linecap="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.9-3M4 13a8 8 0 0 0 14.9 3"/><path d="M4 4v4h4M20 20v-4h-4"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c.5 3 2.5 5 6 5"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2V3Z"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#5B2A3C"/><path d="M16 7c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11Z" fill="#E59A2F"/><path d="M16 13v12" stroke="#FFF9F2" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================
+     SECTION: announcement-bar   (sections/announcement-bar.liquid)
+     settings: text (richtext), link (url)
+     ============================================================ -->
+<div class="announcement-bar" data-section-type="announcement-bar">
+  <p style="margin:0">Subscribe &amp; save <strong>15%</strong> on every delivery · Free US shipping over $50</p>
+</div>
+
+<!-- ============================================================
+     SECTION: header   (sections/header.liquid)
+     settings: logo (image_picker), menu (link_list), show_search, show_account
+     ============================================================ -->
+<header class="site-header" data-section-type="header">
+  <div class="page-width site-header__inner">
+    <a class="logo" href="index.html" aria-label="MelaNourish home"><svg aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Mela<span>Nourish</span></span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <div class="main-nav__top">
+        <span class="logo"><svg aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Mela<span>Nourish</span></span></span>
+        <button class="icon-button" type="button" aria-label="Close menu" data-menu-close><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <ul>
+        <li><a href="#best-sellers">Shop all</a></li>
+        <li><a href="#shop-by-goal">Shop by goal</a></li>
+        <li><a href="#bundles">Bundles</a></li>
+        <li><a href="#how-it-works">Subscribe &amp; save</a></li>
+        <li><a href="#our-story">Our story</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="main-nav__footer">
+        <a class="button" href="#best-sellers">Shop best sellers</a>
+        <a class="button button--secondary" href="#">Log in / Manage subscription</a>
+      </div>
+    </nav>
+    <button class="nav-overlay" type="button" tabindex="-1" aria-label="Close menu" data-nav-overlay></button>
+    <div class="header-icons">
+      <button class="icon-button" type="button" aria-label="Search" aria-controls="search-overlay" data-search-open><svg aria-hidden="true"><use href="#i-search"/></svg></button>
+      <a class="icon-button icon-button--account" href="#" aria-label="Account"><svg aria-hidden="true"><use href="#i-user"/></svg></a>
+      <a class="icon-button" href="#cart" aria-label="Open cart, 0 items" aria-controls="cart-drawer" data-cart-open><svg aria-hidden="true"><use href="#i-bag"/></svg><span class="cart-count" data-cart-count>0</span></a>
+      <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-menu-toggle><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SNIPPET: cart-drawer   (snippets/cart-drawer.liquid, rendered in layout/theme.liquid)
+     settings: free_shipping_threshold, upsell_product, checkout_note
+     ============================================================ -->
+
+<!-- ============================================================
+     SNIPPET: predictive-search   (snippets/predictive-search.liquid + sections/predictive-search.liquid)
+     settings: popular_searches (list), quick_links (link_list), featured_collection
+     ============================================================ -->
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" data-search>
+  <div class="search-top">
+    <div class="page-width search-top__inner">
+      <form class="search-field" action="#" role="search" data-search-form>
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="visually-hidden" for="search-input">Search products</label>
+        <input id="search-input" type="search" name="q" placeholder="Search vitamins, goals, ingredients…" autocomplete="off" data-search-input>
+        <button class="search-clear" type="button" hidden data-search-clear>Clear</button>
+      </form>
+      <button class="icon-button" type="button" aria-label="Close search" data-search-close><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </div>
+
+  <div class="page-width search-body">
+    <!-- default state -->
+    <div class="search-block" data-search-default>
+      <h2>Popular searches</h2>
+      <ul class="chips">
+        <li><button class="chip-btn" type="button" data-search-term="Vitamin D">Vitamin D</button></li>
+        <li><button class="chip-btn" type="button" data-search-term="Iron">Iron</button></li>
+        <li><button class="chip-btn" type="button" data-search-term="Hair">Hair growth</button></li>
+        <li><button class="chip-btn" type="button" data-search-term="Magnesium">Magnesium</button></li>
+        <li><button class="chip-btn" type="button" data-search-term="Sleep">Sleep</button></li>
+        <li><button class="chip-btn" type="button" data-search-term="Gut">Bloating</button></li>
+      </ul>
+    </div>
+    <div class="search-block" data-search-default>
+      <h2>Shop by goal</h2>
+      <ul class="chips">
+        <li><a class="chip-btn" href="index.html#shop-by-goal" data-search-link><svg aria-hidden="true"><use href="#i-bolt"/></svg>Energy</a></li>
+        <li><a class="chip-btn" href="index.html#shop-by-goal" data-search-link><svg aria-hidden="true"><use href="#i-sparkle"/></svg>Hair &amp; skin</a></li>
+        <li><a class="chip-btn" href="index.html#shop-by-goal" data-search-link><svg aria-hidden="true"><use href="#i-flower"/></svg>Hormones</a></li>
+        <li><a class="chip-btn" href="index.html#shop-by-goal" data-search-link><svg aria-hidden="true"><use href="#i-moon"/></svg>Sleep &amp; stress</a></li>
+        <li><a class="chip-btn" href="index.html#bundles" data-search-link><svg aria-hidden="true"><use href="#i-shield"/></svg>Bundles</a></li>
+      </ul>
+    </div>
+
+    <!-- results (default: trending products; typing: matches) -->
+    <div class="search-block">
+      <h2 data-search-heading>Trending now</h2>
+      <p class="search-count" data-search-count hidden></p>
+      <ul class="search-results" data-search-results aria-live="polite"></ul>
+      <p class="search-empty" data-search-empty hidden>No products found. Try "vitamin D", "iron" or "sleep".</p>
+      <div class="search-all" data-search-all hidden><a class="button button--secondary" href="index.html#best-sellers" data-search-link>View all results</a></div>
+    </div>
+  </div>
+</div>
+
+<button class="cart-overlay" type="button" tabindex="-1" aria-label="Close cart" data-cart-overlay></button>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" data-cart-drawer>
+  <div class="cart-drawer__head">
+    <h2 id="cart-title">Your cart <span class="cart-drawer__count" data-cart-drawer-count>0</span></h2>
+    <button class="icon-button" type="button" aria-label="Close cart" data-cart-close><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+
+  <div class="ship-bar">
+    <p data-ship-text>You're <strong>$50.00</strong> away from free shipping</p>
+    <div class="ship-bar__track"><div class="ship-bar__fill" data-ship-fill></div></div>
+  </div>
+
+  <ul class="cart-items" data-cart-items aria-live="polite"></ul>
+
+  <div class="cart-empty">
+    <svg aria-hidden="true"><use href="#i-bag"/></svg>
+    <h3>Your cart is empty</h3>
+    <p>Start with our best sellers or build your own routine.</p>
+    <a class="button" href="index.html#best-sellers" data-cart-close>Shop best sellers</a>
+  </div>
+
+  <div class="cart-upsell" data-cart-upsell>
+    <h3>Pairs well with</h3>
+    <div class="upsell-card">
+      <span class="bottle-art" style="--art-bg:#FCE7C4"><span class="bottle" style="--bottle:#E59A2F"></span></span>
+      <div><strong>Sunshine D3 + K2</strong><span>$24.00</span></div>
+      <button class="button button--secondary" type="button" data-upsell-add>Add</button>
+    </div>
+  </div>
+
+  <div class="cart-drawer__foot">
+    <div class="cart-totals">
+      <div><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>
+      <div class="is-save" data-cart-save-row><span>Subscription savings</span><span data-cart-save>−$0.00</span></div>
+      <div><span>Shipping</span><span data-cart-ship>Calculated at checkout</span></div>
+      <div class="is-total"><span>Total</span><span data-cart-total>$0.00</span></div>
+    </div>
+    <button class="button" type="button" data-checkout>Checkout securely</button>
+    <p class="checkout-msg" data-checkout-msg role="status"></p>
+    <p class="cart-drawer__note">Subscriptions renew automatically. Skip or cancel anytime.</p>
+  </div>
+</aside>
+
+
+<main id="main">
+
+<!-- ============================================================
+     SECTION: hero   (sections/hero.liquid)
+     settings: eyebrow, heading, text, button_1_label/link, button_2_label/link, image
+     blocks: badge (text)  ×4
+     ============================================================ -->
+<section class="hero" data-section-type="hero">
+  <div class="page-width hero__grid">
+    <div class="hero__text">
+      <span class="eyebrow">Made with melanin in mind</span>
+      <h1>Nutrition that finally fits <span style="color:var(--color-primary)">your body.</span></h1>
+      <p>Daily vitamins and supplements formulated around the nutrients Black women most often run low on, like vitamin D, iron and magnesium. Delivered monthly, so you never run out.</p>
+      <div class="hero__ctas">
+        <a class="button" href="#best-sellers">Shop best sellers</a>
+        <a class="button button--secondary" href="#shop-by-goal">Find your routine</a>
+      </div>
+      <ul class="hero__badges">
+        <li data-block-type="badge"><svg aria-hidden="true"><use href="#i-check"/></svg>Made in GMP-certified US facilities</li>
+        <li data-block-type="badge"><svg aria-hidden="true"><use href="#i-check"/></svg>Black women-founded</li>
+        <li data-block-type="badge"><svg aria-hidden="true"><use href="#i-check"/></svg>Cancel subscription anytime</li>
+      </ul>
+    </div>
+    <div class="hero__visual" role="img" aria-label="Three MelaNourish supplement bottles">
+      <div class="bottle-trio" aria-hidden="true">
+        <div class="bottle" style="--bottle:#E59A2F"><div class="bottle__label">D3 + K2<small>Sunshine</small></div></div>
+        <div class="bottle" style="--bottle:#5B2A3C"><div class="bottle__label">Daily Glow<small>Multivitamin</small></div></div>
+        <div class="bottle" style="--bottle:#6F8A6A"><div class="bottle__label">Iron<small>Strong</small></div></div>
+      </div>
+      <div class="hero__sticker" aria-hidden="true"><span><b>15%</b>off every subscription</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: shop-by-goal   (sections/collection-list.liquid)
+     settings: heading, text
+     blocks: collection (collection picker, icon select, tint color, short text) ×8
+     ============================================================ -->
+<section class="section section--surface" id="shop-by-goal" data-section-type="collection-list">
+  <div class="page-width">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Shop by goal</span>
+        <h2>What does your body need?</h2>
+      </div>
+      <p>Start with how you want to feel. Each goal links to a collection of supplements picked for it.</p>
+    </div>
+    <div class="goal-grid">
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#FCE7C4"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span><h3>Energy &amp; fatigue</h3><p>Iron, B12 and a complete daily multi.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#F3DCE3"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-sparkle"/></svg></span><h3>Hair, skin &amp; nails</h3><p>Biotin, collagen and vitamin C.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#FCE7C4"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-sun"/></svg></span><h3>Vitamin D &amp; immunity</h3><p>D3 + K2 for darker skin and darker months.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#DDE7DA"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-flower"/></svg></span><h3>Hormone &amp; cycle support</h3><p>Nutrients for every phase of the month.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#DDE7DA"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-moon"/></svg></span><h3>Sleep &amp; stress</h3><p>Magnesium and ashwagandha to unwind.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#F3DCE3"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><h3>Gut &amp; bloating</h3><p>Probiotics and fiber for daily comfort.</p></a>
+      <a class="goal-card" href="#best-sellers" data-block-type="collection" style="--tint:#FCE7C4"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Heart &amp; brain</h3><p>Omega-3 for everyday wellbeing.</p></a>
+      <a class="goal-card" href="#bundles" data-block-type="collection" style="--tint:#F3DCE3"><span class="goal-card__icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Complete routines</h3><p>Bundles that cover the basics in one box.</p></a>
+    </div>
+    <p class="rail-hint" aria-hidden="true">Swipe to see more →</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: featured-collection   (sections/featured-collection.liquid)
+     settings: heading, text, collection, products_to_show, show_subscribe_price
+     uses snippets/product-card.liquid
+     ============================================================ -->
+<section class="section" id="best-sellers" data-section-type="featured-collection">
+  <div class="page-width">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Best sellers</span>
+        <h2>The daily essentials</h2>
+      </div>
+      <a class="link-arrow" href="#best-sellers">View all products →</a>
+    </div>
+    <div class="product-grid">
+
+      <!-- snippets/product-card.liquid -->
+      <article class="product-card">
+        <div class="product-card__media">
+          <span class="product-card__badge product-card__badge--accent">Best seller</span>
+          <a href="product.html" class="bottle-art" style="--art-bg:#F3DCE3" aria-label="Daily Glow Multivitamin"><div class="bottle" style="--bottle:#5B2A3C"><div class="bottle__label">Daily Glow<small>Multivitamin</small></div></div></a>
+        </div>
+        <span class="product-card__type">Multivitamin</span>
+        <h3 class="product-card__title"><a href="product.html">Daily Glow Women's Multivitamin</a></h3>
+        <p class="product-card__benefit">Your complete daily foundation, with extra D3, iron and B12.</p>
+        <div class="product-card__price">$32.00 <span class="product-card__sub">$27.20 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#FCE7C4" aria-label="Sunshine D3 + K2"><div class="bottle" style="--bottle:#E59A2F"><div class="bottle__label">D3 + K2<small>Sunshine</small></div></div></a>
+        </div>
+        <span class="product-card__type">Vitamin D</span>
+        <h3 class="product-card__title"><a href="product.html">Sunshine Vitamin D3 + K2</a></h3>
+        <p class="product-card__benefit">Supports bones, mood and immunity when sunlight isn't enough.</p>
+        <div class="product-card__price">$24.00 <span class="product-card__sub">$20.40 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <span class="product-card__badge">New</span>
+          <a href="product.html" class="bottle-art" style="--art-bg:#DDE7DA" aria-label="Iron Strong"><div class="bottle" style="--bottle:#6F8A6A"><div class="bottle__label">Iron<small>Strong</small></div></div></a>
+        </div>
+        <span class="product-card__type">Iron</span>
+        <h3 class="product-card__title"><a href="product.html">Iron Strong + Vitamin C</a></h3>
+        <p class="product-card__benefit">A gentle iron, paired with vitamin C to help absorption.</p>
+        <div class="product-card__price">$22.00 <span class="product-card__sub">$18.70 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#F3DCE3" aria-label="Crown Hair, Skin and Nails"><div class="bottle" style="--bottle:#B65A6E"><div class="bottle__label">Crown<small>Hair · Skin · Nails</small></div></div></a>
+        </div>
+        <span class="product-card__type">Beauty</span>
+        <h3 class="product-card__title"><a href="product.html">Crown Hair, Skin &amp; Nails</a></h3>
+        <p class="product-card__benefit">Biotin, collagen-supporting vitamin C and zinc.</p>
+        <div class="product-card__price">$28.00 <span class="product-card__sub">$23.80 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#DDE7DA" aria-label="Calm Magnesium Glycinate"><div class="bottle" style="--bottle:#3E5B6E"><div class="bottle__label">Calm<small>Magnesium</small></div></div></a>
+        </div>
+        <span class="product-card__type">Sleep &amp; stress</span>
+        <h3 class="product-card__title"><a href="product.html">Calm Magnesium Glycinate</a></h3>
+        <p class="product-card__benefit">Supports relaxation, sleep quality and muscle comfort.</p>
+        <div class="product-card__price">$26.00 <span class="product-card__sub">$22.10 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#FCE7C4" aria-label="Balance Ashwagandha"><div class="bottle" style="--bottle:#8A5A2B"><div class="bottle__label">Balance<small>Ashwagandha</small></div></div></a>
+        </div>
+        <span class="product-card__type">Stress</span>
+        <h3 class="product-card__title"><a href="product.html">Balance Ashwagandha</a></h3>
+        <p class="product-card__benefit">An adaptogen to help your body handle everyday stress.</p>
+        <div class="product-card__price">$25.00 <span class="product-card__sub">$21.25 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#F3DCE3" aria-label="Gut Ease Probiotic"><div class="bottle" style="--bottle:#5B2A3C"><div class="bottle__label">Gut Ease<small>Probiotic</small></div></div></a>
+        </div>
+        <span class="product-card__type">Gut health</span>
+        <h3 class="product-card__title"><a href="product.html">Gut Ease Probiotic</a></h3>
+        <p class="product-card__benefit">Supports digestion and helps with occasional bloating.</p>
+        <div class="product-card__price">$34.00 <span class="product-card__sub">$28.90 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <a href="product.html" class="bottle-art" style="--art-bg:#DDE7DA" aria-label="Omega-3 Fish Oil"><div class="bottle" style="--bottle:#C9852A"><div class="bottle__label">Omega-3<small>Heart · Brain</small></div></div></a>
+        </div>
+        <span class="product-card__type">Omega-3</span>
+        <h3 class="product-card__title"><a href="product.html">Omega-3 Fish Oil</a></h3>
+        <p class="product-card__benefit">EPA and DHA for heart, brain and skin.</p>
+        <div class="product-card__price">$30.00 <span class="product-card__sub">$25.50 with subscription</span></div>
+        <a class="button" href="product.html">Choose options</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: image-with-text   (sections/image-with-text.liquid)
+     settings: image, eyebrow, heading, text, button
+     blocks: nutrient (abbr, title, text) ×3
+     ============================================================ -->
+<section class="section section--surface" id="our-story" data-section-type="image-with-text">
+  <div class="page-width mission__grid">
+    <div class="mission__art" role="img" aria-label="Brand image placeholder">
+      <span class="mission__art-label">[Lifestyle photo: brand founder or customers]</span>
+    </div>
+    <div>
+      <span class="eyebrow">Why MelaNourish</span>
+      <h2>One-size-fits-all vitamins were never made for us.</h2>
+      <p>Melanin protects our skin, but it also means our bodies make less vitamin D from sunlight. Many women also deal with low iron and magnesium without knowing it. We build our formulas around those gaps.</p>
+      <ul class="nutrient-list">
+        <li data-block-type="nutrient"><span class="chip">D3</span><div><strong>Vitamin D</strong><span>Darker skin makes less vitamin D from the same amount of sun.</span></div></li>
+        <li data-block-type="nutrient"><span class="chip">Fe</span><div><strong>Iron</strong><span>Monthly cycles can leave women short on iron and feeling tired.</span></div></li>
+        <li data-block-type="nutrient"><span class="chip">Mg</span><div><strong>Magnesium</strong><span>Supports sleep, stress response and muscle comfort.</span></div></li>
+      </ul>
+      <a class="button" href="#">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: subscription-steps   (sections/multicolumn.liquid, color scheme: primary)
+     settings: heading, text
+     blocks: step (title, text) ×3, perk (text) ×4
+     ============================================================ -->
+<section class="section section--primary" id="how-it-works" data-section-type="subscription-steps">
+  <div class="page-width">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Subscribe &amp; save</span>
+        <h2>Your routine, delivered every month.</h2>
+      </div>
+      <p>Pick your supplements once. We send them on your schedule and you save 15% on every order.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-block-type="step"><div class="step__num">1</div><h3>Build your routine</h3><p>Choose products by goal, or start with a ready-made bundle.</p></div>
+      <div class="step" data-block-type="step"><div class="step__num">2</div><h3>Pick your schedule</h3><p>Delivery every 30, 60 or 90 days. Change it whenever you like.</p></div>
+      <div class="step" data-block-type="step"><div class="step__num">3</div><h3>Save on every box</h3><p>15% off each order, with free shipping over $50. Skip or cancel from your account.</p></div>
+    </div>
+    <ul class="subscribe-perks">
+      <li data-block-type="perk">15% off every order</li>
+      <li data-block-type="perk">Skip, swap or pause anytime</li>
+      <li data-block-type="perk">No commitment, cancel online</li>
+      <li data-block-type="perk">Reminder email before every shipment</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: bundles   (sections/featured-bundles.liquid)
+     blocks: bundle (product picker, badge text, included list) ×3
+     ============================================================ -->
+<section class="section" id="bundles" data-section-type="bundles">
+  <div class="page-width">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Bundle &amp; save</span>
+        <h2>Complete routines in one box</h2>
+      </div>
+      <p>Bundles are priced below the products bought separately, and save another 15% on subscription.</p>
+    </div>
+    <div class="bundle-grid">
+      <article class="bundle-card" data-block-type="bundle">
+        <div class="bundle-card__art" style="--art-bg:#FCE7C4" aria-hidden="true">
+          <div class="bottle" style="--bottle:#5B2A3C"></div><div class="bottle" style="--bottle:#E59A2F"></div><div class="bottle" style="--bottle:#6F8A6A"></div>
+        </div>
+        <span class="bundle-card__save">Save 20%</span>
+        <h3>The Essentials Bundle</h3>
+        <ul><li>Daily Glow Multivitamin</li><li>Sunshine D3 + K2</li><li>Iron Strong + Vitamin C</li></ul>
+        <div class="product-card__price">$62.40 <span class="price-compare">$78.00</span></div>
+        <a class="button" href="product.html">Shop bundle</a>
+      </article>
+      <article class="bundle-card" data-block-type="bundle">
+        <div class="bundle-card__art" style="--art-bg:#F3DCE3" aria-hidden="true">
+          <div class="bottle" style="--bottle:#B65A6E"></div><div class="bottle" style="--bottle:#C9852A"></div><div class="bottle" style="--bottle:#5B2A3C"></div>
+        </div>
+        <span class="bundle-card__save">Save 20%</span>
+        <h3>The Glow-Up Bundle</h3>
+        <ul><li>Crown Hair, Skin &amp; Nails</li><li>Omega-3 Fish Oil</li><li>Daily Glow Multivitamin</li></ul>
+        <div class="product-card__price">$72.00 <span class="price-compare">$90.00</span></div>
+        <a class="button" href="product.html">Shop bundle</a>
+      </article>
+      <article class="bundle-card" data-block-type="bundle">
+        <div class="bundle-card__art" style="--art-bg:#DDE7DA" aria-hidden="true">
+          <div class="bottle" style="--bottle:#3E5B6E"></div><div class="bottle" style="--bottle:#8A5A2B"></div><div class="bottle" style="--bottle:#5B2A3C"></div>
+        </div>
+        <span class="bundle-card__save">Save 20%</span>
+        <h3>The Calm &amp; Balance Bundle</h3>
+        <ul><li>Calm Magnesium Glycinate</li><li>Balance Ashwagandha</li><li>Gut Ease Probiotic</li></ul>
+        <div class="product-card__price">$68.00 <span class="price-compare">$85.00</span></div>
+        <a class="button" href="product.html">Shop bundle</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: testimonials   (sections/testimonials.liquid)
+     blocks: testimonial (quote, name, detail) ×3
+     NOTE: placeholder copy — replace with real, verified reviews (e.g. Judge.me / Okendo app block)
+     ============================================================ -->
+<section class="section section--surface" data-section-type="testimonials">
+  <div class="page-width">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Reviews</span>
+        <h2>From our community</h2>
+      </div>
+    </div>
+    <div class="testimonial-grid">
+      <figure class="testimonial" data-block-type="testimonial">
+        <blockquote>[Customer review placeholder: what changed after a few weeks on her routine.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">A</span><span>Customer name<small>Verified subscriber</small></span></figcaption>
+      </figure>
+      <figure class="testimonial" data-block-type="testimonial" style="--tint:#DDE7DA">
+        <blockquote>[Customer review placeholder: why the subscription makes it easy to stay consistent.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">B</span><span>Customer name<small>Verified subscriber</small></span></figcaption>
+      </figure>
+      <figure class="testimonial" data-block-type="testimonial" style="--tint:#F3DCE3">
+        <blockquote>[Customer review placeholder: favorite product and why.]</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">C</span><span>Customer name<small>Verified buyer</small></span></figcaption>
+      </figure>
+    </div>
+    <p class="sample-note">Real reviews will load here from a reviews app once the store is live.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: trust-badges   (sections/trust-badges.liquid)
+     blocks: badge (icon select, title, text) ×4
+     ============================================================ -->
+<section class="section" data-section-type="trust-badges">
+  <div class="page-width trust-row">
+    <div class="trust-item" data-block-type="badge"><svg aria-hidden="true"><use href="#i-flask"/></svg><h3>GMP-certified</h3><p>Made in GMP-certified facilities in the USA.</p></div>
+    <div class="trust-item" data-block-type="badge"><svg aria-hidden="true"><use href="#i-leaf"/></svg><h3>Clean formulas</h3><p>No artificial colors or unnecessary fillers.</p></div>
+    <div class="trust-item" data-block-type="badge"><svg aria-hidden="true"><use href="#i-truck"/></svg><h3>Fast shipping</h3><p>Ships from US warehouses in 2–4 business days.</p></div>
+    <div class="trust-item" data-block-type="badge"><svg aria-hidden="true"><use href="#i-refresh"/></svg><h3>Flexible plans</h3><p>Skip, swap or cancel your subscription anytime.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: faq   (sections/collapsible-content.liquid)
+     blocks: question (heading, richtext answer) ×5
+     ============================================================ -->
+<section class="section section--surface faq" id="faq" data-section-type="faq">
+  <div class="page-width faq__grid">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered</h2>
+      <p style="color:var(--color-text-muted)">Can't find what you need? Email us at [support email].</p>
+    </div>
+    <div>
+      <details data-block-type="question" open><summary>How does the subscription work?</summary><p>Choose "Subscribe &amp; save" on any product and pick a delivery schedule of 30, 60 or 90 days. You save 15% on every order and can skip, change or cancel from your account at any time.</p></details>
+      <details data-block-type="question"><summary>Why supplements made for Black women?</summary><p>Some nutrient gaps are more common in Black women, for example vitamin D, because melanin reduces how much the skin makes from sunlight. Our formulas focus on those nutrients.</p></details>
+      <details data-block-type="question"><summary>Where are your products made?</summary><p>Our supplements are made and shipped from GMP-certified facilities in the United States.</p></details>
+      <details data-block-type="question"><summary>Can I take more than one product together?</summary><p>Our bundles are designed to be taken together. If you are pregnant, nursing, taking medication or have a medical condition, check with your doctor before starting any supplement.</p></details>
+      <details data-block-type="question"><summary>How long does shipping take?</summary><p>Orders usually ship within 1–2 business days and arrive in 2–4 business days within the US.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION: newsletter   (sections/newsletter.liquid)
+     settings: heading, text, button_label  (uses {% form 'customer' %})
+     ============================================================ -->
+<section class="section" data-section-type="newsletter">
+  <div class="page-width">
+    <div class="newsletter">
+      <div>
+        <h2>Get 10% off your first order</h2>
+        <p>Join the list for nutrition tips, new launches and member-only offers.</p>
+      </div>
+      <form data-newsletter-form novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="contact[email]" placeholder="Your email address" autocomplete="email" required>
+        <button class="button" type="submit">Sign up</button>
+        <p class="form-message" data-form-message role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     SECTION: footer   (sections/footer.liquid)
+     blocks: menu (link_list) ×3, brand_info (text + social)
+     settings: disclaimer (richtext)
+     ============================================================ -->
+<footer class="site-footer" data-section-type="footer">
+  <div class="page-width">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html" aria-label="MelaNourish home"><svg aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word">Mela<span>Nourish</span></span></a>
+        <p style="margin-top:16px;max-width:300px">Vitamins and supplements made with Black women's nutrition in mind.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tt"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+        </div>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="#best-sellers">All products</a></li><li><a href="#best-sellers">Best sellers</a></li><li><a href="#bundles">Bundles</a></li><li><a href="#shop-by-goal">Shop by goal</a></li></ul></div>
+      <div><h3>About</h3><ul><li><a href="#our-story">Our story</a></li><li><a href="#how-it-works">How subscriptions work</a></li><li><a href="#">Ingredients &amp; quality</a></li><li><a href="#">Reviews</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="#faq">FAQ</a></li><li><a href="#">Manage subscription</a></li><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">Contact us</a></li></ul></div>
+    </div>
+    <div class="disclaimer">
+      <p>*These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease. Consult your healthcare provider before starting any supplement, especially if you are pregnant, nursing or taking medication.</p>
+      <p>© 2026 MelaNourish · Privacy policy · Terms of service · Accessibility</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/theme.js"></script>
+</body>
+</html>
